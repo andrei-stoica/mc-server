@@ -2,6 +2,17 @@
 This is a all in one setup to run a Spigot server using docker. It also includes
 a systemd unit file for setting it up to run automaticaly.
 
+## Requirements
+- docker
+- make
+- curl
+
+The server is configured to use up to 4 GB if ram. To change this you will need to edit the docker run commands in the Makefile and unit file.
+> -Xms1G
+ - minimum 1 GB of memory
+> -Xmx4G
+ - maximum 4 GB of memeory
+
 ## Building
 > make build-latest
  - builds the latest version of of spigot
@@ -23,5 +34,4 @@ a systemd unit file for setting it up to run automaticaly.
 
 > make down
  - top the systemd service
-
 
