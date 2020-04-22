@@ -1,0 +1,13 @@
+[Unit]
+Description=Minecraft Server
+After=docker.service
+Requires=docker.service
+
+[Service]
+Environment="MC_DIR=/mc"
+Restart=Always
+ExecStart=/usr/bin/docker run -t --name mc -p 25565:25565 --rm -v ${MC_DIR}/spigot:/mc -w /mc openjdk java -Xms1G -Xmx4G -server -jar spigot.jar nogui
+ExecStop=/usr/bin/docker container stop mc
+
+[Install]
+WantedBy=multi-user.target
