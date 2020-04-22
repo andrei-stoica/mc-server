@@ -13,6 +13,10 @@ The server is configured to use up to 4 GB if ram. To change this you will need 
 > -Xmx4G
  - maximum 4 GB of memeory
 
+## Warnings
+All file permisions are handeled by docker, thus they will be owned by root on
+the host filesystem.
+
 ## Building
 > make build-latest
  - builds the latest version of of spigot

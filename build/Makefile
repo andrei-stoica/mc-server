@@ -1,10 +1,7 @@
 LATEST := $(shell ls -rt build/spigot*.jar | tail -1)
 
-deploy: build-latest spigot
+spigot/spigot.jar: build-latest spigot
 	cp $(LATEST) spigot/spigot.jar
-
-deploy-1.15.2: build/spigot-1.15.2.jar spigot
-	cp build/spigot-1.15.2.jar spigot/spigot.jar
 
 build-latest: build-image
 	docker run -it --rm -v $(WORKING_DIR)/build:/mc -w /mc java-build java -cp /mc \
