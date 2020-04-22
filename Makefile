@@ -17,4 +17,7 @@ up:
 down:
 	systemctl stop mc-server.service
 
+check:
+	systemctl status mc-server.service
+
 include build/Makefile
